@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.sergioppires.asnifferpluginintegration</id>
-    <name>asniffer-plugin-integration</name>
+    <name>asniffer-integration</name>
     <vendor>sergioppires</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -15,4 +15,12 @@
         <listener class="com.github.sergioppires.asnifferpluginintegration.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <actions>
+        <group id="ASnifferVisualizer.RunAsniffer" text="Asniffer Plugin" description="Asniffer methods">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="com.github.sergioppires.asnifferpluginintegration.services.ASnifferService" id="ASnifferVisualizer.Actions.RunAsniffer"
+                    text="Run Asniffer"/>
+        </group>
+    </actions>
 </idea-plugin>

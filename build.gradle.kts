@@ -16,6 +16,10 @@ plugins {
     id("org.jetbrains.qodana") version "0.1.12"
 }
 
+dependencies {
+    implementation("io.github.phillima:asniffer:2.4.4")
+}
+
 group = properties("pluginGroup")
 version = properties("pluginVersion")
 
